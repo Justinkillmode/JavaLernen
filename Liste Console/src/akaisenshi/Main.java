@@ -23,11 +23,11 @@ public class Main {
 		StringBuilder stBuilder = new StringBuilder();
 		stBuilder.append("Willkommen in der Anime Liste");
 		stBuilder.append("\n");
-		stBuilder.append("Wählen sie einer dieser Funktionen");
+		stBuilder.append("Waehlen sie einer dieser Funktionen");
 		stBuilder.append("\n");
 		stBuilder.append("1) Liste Anzeigen");
 		stBuilder.append("\n");
-		stBuilder.append("2) Anime Einfügen");
+		stBuilder.append("2) Anime Einfï¿½gen");
 		stBuilder.append("\n");
 		stBuilder.append("3) Exit");
 
