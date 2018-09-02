@@ -8,23 +8,23 @@ public class Volt {
 		Scanner sca = new Scanner(System.in);
 		float eingabe1;
 		float eingabe2;
-		float lösung;
+		float loesung;
 
 		System.out.println("Geben sie den Wert von R ein.");
 		eingabe1 = sc.nextFloat();
 		System.out.println("\n" + "Geben sie ein ob ihr Wert k, M, G T");
-		System.out.println("oder m, µ, n beinhaltet oder nichts wenns nichts von den ist.");
-		String größe1 = "";
-		größe1 = sca.nextLine();
+		System.out.println("oder m, ï¿½, n beinhaltet oder nichts wenns nichts von den ist.");
+		String groesse1 = "";
+		groesse1 = sca.nextLine();
 
 		System.out.println("\n" + "Geben sie den Wert von I ein");
 		eingabe2 = sc.nextFloat();
 		System.out.println("\n" + "Geben sie ein ob ihr Wert k, M, G T");
-		System.out.println("oder m, µ, n beinhaltet oder nichts wenns nichts von den ist.");
-		String größe2 = "";
-		größe2 = sca.nextLine();
+		System.out.println("oder m, ï¿½, n beinhaltet oder nichts wenns nichts von den ist.");
+		String groesse2 = "";
+		groesse2 = sca.nextLine();
 
-		switch (größe1) {
+		switch (groesse1) {
 
 		case "k":
 		case "K":
@@ -44,7 +44,7 @@ public class Volt {
 		case "m":
 			eingabe1 = eingabe1 / 1000;
 			break;
-		case "µ":
+		case "ï¿½":
 			eingabe1 = eingabe1 / 1000000;
 			break;
 		case "n":
@@ -56,7 +56,7 @@ public class Volt {
 			break;
 
 		}
-		switch (größe2) {
+		switch (groesse2) {
 
 		case "k":
 		case "K":
@@ -76,7 +76,7 @@ public class Volt {
 		case "m":
 			eingabe2 = eingabe2 / 1000;
 			break;
-		case "µ":
+		case "ï¿½":
 			eingabe2 = eingabe2 / 1000000;
 			break;
 		case "n":
@@ -89,8 +89,8 @@ public class Volt {
 
 		}
 
-		lösung = eingabe1 * eingabe2;
-		System.out.println("\n" + "Die Lösung ist " + lösung + " V");
+		loesung = eingabe1 * eingabe2;
+		System.out.println("\n" + "Die Lï¿½sung ist " + loesung + " V");
 
 	}
 
