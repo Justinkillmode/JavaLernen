@@ -42,7 +42,6 @@ public class Main {
 			case "1":
 				for (String ele : list) {
 					System.out.println(ele);
-
 				}
 				break;
 			case "2":
