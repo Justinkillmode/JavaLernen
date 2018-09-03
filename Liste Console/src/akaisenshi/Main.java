@@ -1,12 +1,10 @@
 package akaisenshi;
 
+import java.util.*;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.lang.reflect.Array;
 
 public class Main {
 
@@ -56,8 +54,10 @@ public class Main {
 
 				if (eingabe2.equals("1")) {
 					list.add(eingabe + " geguck");
+					Collections.sort(list);
 				} else {
 					list.add(eingabe + " nicht geguckt");
+					Collections.sort(list);
 
 				}
 
