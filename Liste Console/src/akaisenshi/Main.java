@@ -25,7 +25,7 @@ public class Main {
 		stBuilder.append("\n");
 		stBuilder.append("1) Liste Anzeigen");
 		stBuilder.append("\n");
-		stBuilder.append("2) Anime Einf�gen");
+		stBuilder.append("2) Anime Einfuegen");
 		stBuilder.append("\n");
 		stBuilder.append("3) Exit");
 
