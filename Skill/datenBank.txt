@@ -1,0 +1,10 @@
+localhost
+hibernate
+root
+root
+zuordnung
+benutzer
+skill
+thema
+lust
+level

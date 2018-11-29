@@ -1,0 +1,7 @@
+src/main/emojies/1.png
+src/main/emojies/2.png
+src/main/emojies/3.png
+src/main/emojies/4.png
+src/main/emojies/5.png
+src/main/emojies/6.png
+src/main/emojies/7.png
