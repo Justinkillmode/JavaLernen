@@ -32,7 +32,6 @@ class TabelSearch implements ActionListener, DocumentListener {
 
 	@Override
 	public void insertUpdate(DocumentEvent arg0) {
-		// TODO Auto-generated method stub
 		String query = MainFrame.search.getText();
 		filter(query);
 
@@ -47,7 +46,6 @@ class TabelSearch implements ActionListener, DocumentListener {
 
 	@Override
 	public void removeUpdate(DocumentEvent arg0) {
-		// TODO Auto-generated method stub
 		String query = MainFrame.search.getText();
 		filter(query);
 

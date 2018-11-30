@@ -35,7 +35,7 @@ public class WerteLoeschenActionListener implements ActionListener {
 			frame.setVisible(true);
 			frame.setLayout(null);
 			frame.setResizable(false);
-			frame.setLocationRelativeTo(null);
+			frame.setLocationRelativeTo(MainFrame.mainFrame);
 
 			benutzerComboBox.setBounds(32, 20, 200, 50);
 			btnLoeschen.setBounds(55, 90, 150, 50);
@@ -70,7 +70,7 @@ public class WerteLoeschenActionListener implements ActionListener {
 			frame.setVisible(true);
 			frame.setLayout(null);
 			frame.setResizable(false);
-			frame.setLocationRelativeTo(null);
+			frame.setLocationRelativeTo(MainFrame.mainFrame);
 
 			MainFrame.comboBox2bTabelSkill.setBounds(32, 20, 200, 50);
 			btnLoeschen.setBounds(55, 90, 150, 50);
@@ -106,7 +106,7 @@ public class WerteLoeschenActionListener implements ActionListener {
 			frame.setVisible(true);
 			frame.setLayout(null);
 			frame.setResizable(false);
-			frame.setLocationRelativeTo(null);
+			frame.setLocationRelativeTo(MainFrame.mainFrame);
 
 			MainFrame.comboBoxTabelThema.setBounds(32, 20, 200, 50);
 			btnLoeschen.setBounds(55, 90, 150, 50);
@@ -142,7 +142,7 @@ public class WerteLoeschenActionListener implements ActionListener {
 			frame.setVisible(true);
 			frame.setLayout(null);
 			frame.setResizable(false);
-			frame.setLocationRelativeTo(null);
+			frame.setLocationRelativeTo(MainFrame.mainFrame);
 
 			MainFrame.comboBoxTabelLevel.setBounds(32, 20, 200, 50);
 			btnLoeschen.setBounds(55, 90, 150, 50);

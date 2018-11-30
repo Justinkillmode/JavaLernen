@@ -75,29 +75,33 @@ public class MainTableActionListener implements CellEditorListener, TableModelLi
 				int spalte = 0;
 				while (rs.next()) {
 
-					if (rs.getInt(Datenbank.datenBankSpalte3) == Datenbank
-							.loadSkillIdfromDB(MainFrame.db_Inhalt.getValueAt(spalte, 2).toString())
-							&& rs.getInt(2) == Datenbank.loadNameIdfromDB(NutzerDaten.benutzer)) {
-						spalte++;
-					} else if (rs.getInt(Datenbank.datenBankSpalte3) != Datenbank
-							.loadSkillIdfromDB(MainFrame.db_Inhalt.getValueAt(spalte, 2).toString())
-							&& rs.getInt(2) == Datenbank.loadNameIdfromDB(NutzerDaten.benutzer)) {
-						PreparedStatement preparedStmt = Datenbank.getConnection()
-								.prepareStatement(Datenbank.querySkillUpdate);
+					try {
+						if (rs.getInt(Datenbank.datenBankSpalte3) == Datenbank
+								.loadSkillIdfromDB(MainFrame.db_Inhalt.getValueAt(spalte, 2).toString())
+								&& rs.getInt(2) == Datenbank.loadNameIdfromDB(NutzerDaten.benutzer)) {
+							spalte++;
+						} else if (rs.getInt(Datenbank.datenBankSpalte3) != Datenbank
+								.loadSkillIdfromDB(MainFrame.db_Inhalt.getValueAt(spalte, 2).toString())
+								&& rs.getInt(2) == Datenbank.loadNameIdfromDB(NutzerDaten.benutzer)) {
+							PreparedStatement preparedStmt = Datenbank.getConnection()
+									.prepareStatement(Datenbank.querySkillUpdate);
 
-						preparedStmt.setInt(1,
-								Datenbank.loadSkillIdfromDB(MainFrame.db_Inhalt.getValueAt(spalte, 2).toString()));
-						preparedStmt.setInt(2, rs.getInt(Datenbank.datenBankSpalteId));
-						preparedStmt.executeUpdate();
+							preparedStmt.setInt(1,
+									Datenbank.loadSkillIdfromDB(MainFrame.db_Inhalt.getValueAt(spalte, 2).toString()));
+							preparedStmt.setInt(2, rs.getInt(Datenbank.datenBankSpalteId));
+							preparedStmt.executeUpdate();
 
-						AllUserToTheDB.userDataChange();
-						Datenbank.creatStatement().close();
-						rs.close();
-						break;
-					}
-					if (MainFrame.db_Inhalt.getRowCount() <= spalte) {
+							AllUserToTheDB.userDataChange();
+							Datenbank.creatStatement().close();
+							rs.close();
+							break;
+						}
+						if (MainFrame.db_Inhalt.getRowCount() <= spalte) {
 
-						break;
+							break;
+						}
+					} catch (Exception e2) {
+
 					}
 
 				}

@@ -13,8 +13,10 @@ public class OpenFile {
 		JFileChooser fileChooser = new JFileChooser();
 
 		fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
-		FileNameExtensionFilter filter = new FileNameExtensionFilter("png", "jpg");
-		fileChooser.addChoosableFileFilter(filter);
+		FileNameExtensionFilter filterPng = new FileNameExtensionFilter("png", "png");
+		FileNameExtensionFilter filterJpg = new FileNameExtensionFilter("jpg", "jpg");
+		fileChooser.addChoosableFileFilter(filterPng);
+		fileChooser.addChoosableFileFilter(filterJpg);
 		int result = fileChooser.showSaveDialog(null);
 		if (result == JFileChooser.APPROVE_OPTION) {
 

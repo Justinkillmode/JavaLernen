@@ -264,7 +264,6 @@ public class NeueWerteActionListener implements ActionListener {
 						mehrSkillsEinfuegen = false;
 
 					}
-					mehrSkillsEinfügen.removeActionListener(this);
 				}
 			});
 
@@ -303,28 +302,23 @@ public class NeueWerteActionListener implements ActionListener {
 						taSkillBeschreibung.setText("");
 						tfSkillName.setText("");
 
-						NeuerEintrag.comboBoxSkill.removeAllItems();
+						MainFrame.comboBox2bTabelSkill.removeAllItems();
 						ArrayList<String> ar = new ArrayList<>();
 
-						String sThema = NeuerEintrag.comboBoxThema.getSelectedItem().toString();
-						int id = Datenbank.loadThemaIdfromDB(sThema);
 						try {
 							ResultSet rs = Datenbank.creatStatement().executeQuery(Datenbank.querySelectAllFromSkill);
 
 							while (rs.next()) {
 
-								if (rs.getInt(Datenbank.datenBankSpalte4) == id) {
-									String name = Datenbank.loadSkillfromDB(rs.getInt(Datenbank.datenBankSpalteId))
-											.toString();
+								String name = rs.getString(Datenbank.datenBankSpalteName);
 
-									if (!ar.contains(name)) {
-										ar.add(name);
-									}
+								if (!ar.contains(name)) {
+									ar.add(name);
 								}
 							}
 							@SuppressWarnings("rawtypes")
 							DefaultComboBoxModel model = new DefaultComboBoxModel(ar.toArray());
-							NeuerEintrag.comboBoxSkill.setModel(model);
+							MainFrame.comboBox2bTabelSkill.setModel(model);
 							rs.close();
 							Datenbank.creatStatement().close();
 							if (!mehrSkillsEinfuegen) {
@@ -332,8 +326,9 @@ public class NeueWerteActionListener implements ActionListener {
 								frameSkillName.dispose();
 								wiederholungsStop++;
 								btnSkill.removeActionListener(this);
-
+								mehrSkillsEinfügen.removeActionListener(this);
 							}
+
 						} catch (SQLException e) {
 							e.printStackTrace();
 						}
@@ -378,7 +373,7 @@ public class NeueWerteActionListener implements ActionListener {
 						checkName = true;
 						Datenbank.saveNewThema(neuesThema);
 
-						NeuerEintrag.comboBoxThema.removeAllItems();
+						MainFrame.comboBoxTabelThema.removeAllItems();
 						ArrayList<String> ar = new ArrayList<>();
 
 						try {
@@ -386,8 +381,7 @@ public class NeueWerteActionListener implements ActionListener {
 
 							while (rs.next()) {
 
-								String thenaName = Datenbank.loadThemafromDB(rs.getInt(Datenbank.datenBankSpalteId))
-										.toString();
+								String thenaName = rs.getString(Datenbank.datenBankSpalteName);
 
 								if (!ar.contains(thenaName)) {
 									ar.add(thenaName);
@@ -395,7 +389,7 @@ public class NeueWerteActionListener implements ActionListener {
 							}
 							@SuppressWarnings("rawtypes")
 							DefaultComboBoxModel model = new DefaultComboBoxModel(ar.toArray());
-							NeuerEintrag.comboBoxThema.setModel(model);
+							MainFrame.comboBoxTabelThema.setModel(model);
 							rs.close();
 							Datenbank.creatStatement().close();
 						} catch (SQLException ex) {
@@ -425,12 +419,33 @@ public class NeueWerteActionListener implements ActionListener {
 					} else {
 						name = true;
 						Datenbank.saveNewSkillLevel(neueLust);
+						MainFrame.comboBoxTabelLust.removeAllItems();
+						ArrayList<String> ar = new ArrayList<>();
 
+						try {
+							ResultSet rs = Datenbank.creatStatement()
+									.executeQuery(Datenbank.querySelectAllFromSkillLevel);
+
+							while (rs.next()) {
+
+								String LevelName = rs.getString(Datenbank.datenBankSpalteName);
+
+								if (!ar.contains(LevelName)) {
+									ar.add(LevelName);
+								}
+							}
+							@SuppressWarnings("rawtypes")
+							DefaultComboBoxModel model = new DefaultComboBoxModel(ar.toArray());
+							MainFrame.comboBoxTabelLevel.setModel(model);
+							rs.close();
+							Datenbank.creatStatement().close();
+
+						} catch (SQLException ex) {
+							ex.printStackTrace();
+						}
 					}
-				} else {
-					name = true;
-				}
 
+				}
 			}
 		}
 		if (e.getSource() == MainFrame.lustNamenAendern) {
